@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class BlockchainUtil {
 
-    public byte[] generateHash(String arg){
+    public String generateHash(String arg){
 
         MessageDigest message = MessageDigest.getInstance("SHA-256");
 
-        return message.digest(arg.getBytes(StandardCharsets.UTF_8));
+
+        return new String(message.digest(arg.getBytes(StandardCharsets.UTF_8)));
     }
 
     public String promptUser(String sQuestion){

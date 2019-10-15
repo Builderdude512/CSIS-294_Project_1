@@ -10,13 +10,19 @@ public class Miner implements Runnable{
 
     public Boolean doProofofWork(Block oblock){
 
-        String holderarg; //for oblock.getdifficulty
         String dummy = "0"
 
-        while(dummy.length() > holderarg){
+        while(dummy.length() < oblock.getDifficulty()){
             dummy = dummy + "0";
         }
 
+        if(bAbortPoW = true){
+            bAbortPoW = false;
+            System.out.print("Aborted Mining Block");
+            return false;
+        } else {
+            
+        }
 
     }
 
@@ -26,10 +32,6 @@ public class Miner implements Runnable{
 
         u.p("Miner thread started.");
 
-
-        // *****************************
-        // *** Eternal Mining Loop *****
-        // Because miner always checking for next block to immediately work on.
         while(true){
 
             u.sleep(500);
